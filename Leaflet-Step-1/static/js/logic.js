@@ -77,27 +77,27 @@ function createMap(earthquake_markers) {
   // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
    L.control.layers(baseMaps, overlayMaps, {
         collapsed: false
-    }).addTo(map);
+    }).addTo(myMap);
 
 
-//    // Set up map legend
-//    var legend = L.control({position: "bottomright"});
+   // Set up map legend
+   var legend = L.control({position: "bottomright"});
 
-//    legend.onAdd = function() {
-//      var div = L.DomUtil.create("div", "info legend"),
-//       depth = [0, 20, 40, 60, 80];
+   legend.onAdd = function() {
+     var div = L.DomUtil.create("div", "info legend"),
+      depth = [0, 20, 40, 60, 80];
       
-//       div.innerHTML += "<h3 style='text-align: center'>Depth</h3>"
+      div.innerHTML += "<h3 style='text-align: center'>Depth</h3>"
   
-//       for (var i =0; i < depth.length; i++) {
-//         div.innerHTML += 
-//         '<i style="background:' + chooseColor(depth[i] + 1) + '"></i> ' +
-//             depth[i] + (depth[i + 1] ? '-' + depth[i + 1] + '<br>' : '+');
-//         }
-//         return div;
-//     };
+      for (var i =0; i < depth.length; i++) {
+        div.innerHTML += 
+        '<i style="background:' + chooseColor(depth[i] + 1) + '"></i> ' +
+            depth[i] + (depth[i + 1] ? '-' + depth[i + 1] + '<br>' : '+');
+        }
+        return div;
+    };
 
-//     // Add legend to map
-//     legend.addTo(map);
+    // Add legend to map
+    legend.addTo(myMap);
 }
 
